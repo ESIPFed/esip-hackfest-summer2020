@@ -1,9 +1,10 @@
 from flask import Flask, render_template, jsonify
-
+from flask_restplus import api
 
 import json         # for saving results to JSON file
 import os.path      # for parsing input from JSON file
 
+api = Api()
 app = Flask(__name__)
 
 @app.route('/')
