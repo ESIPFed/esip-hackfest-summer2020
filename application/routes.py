@@ -1,5 +1,5 @@
 from application import app #and db later
-from flask import Flask, render_template, jsonify, json
+from flask import render_template, jsonify, json
 
 # import json
 import os.path      # for parsing input from JSON file
