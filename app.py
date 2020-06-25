@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 
+
 import json         # for saving results to JSON file
 import os.path      # for parsing input from JSON file
 
