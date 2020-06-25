@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            function printBtn() { //goal: create a vertical line of buttons
+                //Array for topic nodes
+                var topics = [];
+                for(var i = 0; i<topics.length; i++) {
+                    var btn = document.createElement("button");
+                    var t = document.createTextNode(topics[i]);
+                    btn.appendChild(t);
+                    document.body.appendChild(btn);
+                    //insert new line, figure out how
+                    document.writeln;
+                    //or
+                    document.write("<br>");
+                }
+            }
+        </script>
+
+    </head>
+
+    <body onload="printBtn">
+
+        <p>Choose a topic:</p>
+
+    </body>
+    
+
+
+
+
+
+
+</html>
+
+{% endblock %}
+
+
+<!--Notes
+    
+    {{name}} to specify variables in app.py
+
+
+-->
