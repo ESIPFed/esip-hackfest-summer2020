@@ -1,13 +1,22 @@
-from flask import Flask, render_template, jsonify
-from flask_restplus import api
+from application import app #and db later
+from flask import Flask, render_template, jsonify, json
 
-import json         # for saving results to JSON file
+# import json
 import os.path      # for parsing input from JSON file
 
-api = Api()
-app = Flask(__name__)
+from flask_restplus import Resource
+
+@api.route('/api')
+class Get(Resource):
+
+    def get(self):
+        return jsonify('''objects''')
+
+
+
 
 @app.route('/')
+@app.route('/home')
 def home():
     return render_template('home.html')
 
