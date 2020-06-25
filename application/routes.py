@@ -6,6 +6,7 @@ import os.path      # for parsing input from JSON file
 
 from flask_restplus import Resource
 
+# API
 @api.route('/api')
 class Get(Resource):
 

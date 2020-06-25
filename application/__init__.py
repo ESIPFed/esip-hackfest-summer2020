@@ -6,3 +6,6 @@ api = Api()
 app = Flask(__name__)
 
 # db = ___
+
+
+from application import routes
