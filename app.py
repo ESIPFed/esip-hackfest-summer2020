@@ -1,19 +1,25 @@
-from application import app #and db later
-from flask import render_template, jsonify, json
+from flask import Flask, render_template, jsonify, json
 
 # import json
 import os.path      # for parsing input from JSON file
 
-from flask_restplus import Resource
+from flask_restplus import Api, Resource
 
 # API
+'''
 @api.route('/api')
 class Get(Resource):
 
     def get(self):
-        return jsonify('''objects''')
+        return jsonify(objects)
 
+'''
 
+# api = Api()
+
+app = Flask(__name__)
+
+# db = ___
 
 
 @app.route('/')
