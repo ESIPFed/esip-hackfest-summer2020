@@ -11,6 +11,10 @@ OrderedDict([('topic', 'Flooding'), ('name', 'GFMS')...etc])
 
 '''
 
+topics = []
+applications = []
+datasets = []
+
 with open('file.csv', 'r') as csv_file: 
     csv_reader = csv.DictReader(csv_file) # add , delimiter=',' to specify delimiter
 
