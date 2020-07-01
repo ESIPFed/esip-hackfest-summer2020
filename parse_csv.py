@@ -17,5 +17,9 @@ with open('file.csv', 'r') as csv_file:
 next(csv_reader)  # skips over both header rows 
 
 for line in csv_reader:
+    
+    
+    
+    
     print(line) # prints "['GFMS', 'http://flood.umd.edu/', '2014'...etc]"
     print(line['name']) # prints "GFMS"
