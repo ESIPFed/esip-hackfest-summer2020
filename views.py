@@ -19,8 +19,6 @@ class Get(Resource):
 
 app = Flask(__name__)
 
-# db = ___
-
 
 @app.route('/')
 @app.route('/home')

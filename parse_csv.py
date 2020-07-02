@@ -7,9 +7,9 @@ with open('input.csv', 'r') as csv_file:
 
     for line in csv_reader:
        # print(line) # prints "['GFMS', 'http://flood.umd.edu/', '2014'...etc]"
-        print(line['name']) # prints "GFMS"
+        print(line['topic']) # prints "GFMS"
 
-    
+
 
 
 '''
