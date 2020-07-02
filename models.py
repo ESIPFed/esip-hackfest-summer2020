@@ -4,6 +4,18 @@ import csv
 graph = Graph()
 
 
+'''
+sample csv: file.csv
+
+(CSV file header) 6 fields total 
+topic,name,website,publication,conf-level,identifier
+
+DictReader returns:
+OrderedDict([('topic', 'Flooding'), ('name', 'GFMS')...etc])
+
+'''
+
+
 with open('input.csv', 'r') as csv_file: 
     csv_reader = csv.DictReader(csv_file) # add , delimiter=',' to specify delimiter
 
