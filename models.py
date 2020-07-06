@@ -1,11 +1,7 @@
 from py2neo import Graph, Node, Relationship
-import os
 import csv
 
 
-url = os.environ.get('GRAPHENEDB_URL', 'http://localhost:7474')
-username = os.environ.get('NEO4J_USERNAME')
-password = os.environ.get('NEO4J_PASSWORD')
 
 
 def db():
@@ -13,7 +9,7 @@ def db():
         csv_reader = csv.DictReader(csv_file) # add , delimiter=',' to specify delimiter
 
         # next(csv_reader)  # skips over both header rows 
-        graph = Graph(url + '/db/data/', username=username, password=password)
+        graph = Graph()
         for line in csv_reader:
             topic = Node("Topic", name=line['topic']) # merge later on
             application = Node("Application", name=line['name'], website=line['website'],
