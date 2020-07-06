@@ -8,29 +8,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <p>Choose a topic:</p>
+    </head>
+
+    <body>
         <script>
 
             function printBtn() { //goal: create a vertical line of buttons
                 //Array for topic nodes
-                var topics = [];
+                var topics = {topics};
                 for(var i = 0; i<topics.length; i++) {
                     var btn = document.createElement("button");
-                    var t = document.createTextNode(topics[i]);
+                    var t = document.createTextNode(topics[i]['name']);
                     btn.appendChild(t);
                     document.body.appendChild(btn);
-                    //insert new line, figure out how
-                    document.writeln;
-                    //or
                     document.write("<br>");
                 }
             }
+            window.onload = printBtn();
         </script>
-
-    </head>
-
-    <body onload="printBtn">
-
-        <p>Choose a topic:</p>
+        
 
     </body>
     
