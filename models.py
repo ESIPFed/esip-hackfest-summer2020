@@ -2,7 +2,6 @@ from py2neo import Graph, Node, Relationship
 import csv
 
 
-
 def db():
     graph = Graph()
 
