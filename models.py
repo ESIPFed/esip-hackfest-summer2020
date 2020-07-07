@@ -1,9 +1,15 @@
 from py2neo import Graph, Node, Relationship
+from neo4j import GraphDatabase
 import csv
 
+graph = Graph()
+
+uri = "neo4j://localhost:7687"
+driver = GraphDatabase.driver(uri, auth=("neo4j", "password"))
+
+session = driver.session(SessionConfig.forDatabase( "Applications" ))
 
 def db():
-    graph = Graph()
 
     with open('input.csv', 'r') as csv_file: 
         csv_reader = csv.DictReader(csv_file) # add , delimiter=',' to specify delimiter
@@ -18,17 +24,17 @@ def db():
 
             graph.create(Relationship(application, "relates to", topic))
             graph.create(Relationship(application, "uses", dataset, conf_level=line['conf-level']))
+
+            # Using official Neo4j Python Driver
+            session.write_transaction(assign_topic, line['name'], line['topic'])
+
+
     return graph
 
 
 
-'''
-sample csv: file.csv
+def assign_topic(tx, application, topic):
+    tx.run("CREATE (a:Application {name: $application})-[:RELATES_TO]->(t:Topic {name: $topic})", application=application, topic=topic)
 
-(CSV file header) 6 fields total 
-topic,name,website,publication,conf-level,identifier
 
-DictReader returns:
-OrderedDict([('topic', 'Flooding'), ('name', 'GFMS')...etc])
 
-'''

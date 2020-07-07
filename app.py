@@ -34,10 +34,11 @@ def use_cases():
 def data():
     return render_template('data.html')
 
+'''
 @app.route('/api')
 def session_api():
     return jsonify(list()) #list of relevant dataset nodes
-
+'''
 
 if __name__ == '__main__':
     app.run(debug=True)
