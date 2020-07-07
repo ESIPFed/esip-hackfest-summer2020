@@ -1,5 +1,5 @@
 from py2neo import Graph, Node, Relationship
-from neo4j import GraphDatabase
+from neo4j import GraphDatabase, SessionConfig
 import csv
 
 graph = Graph()
