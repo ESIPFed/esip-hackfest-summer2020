@@ -19,7 +19,7 @@ class Get(Resource):
 # api = Api()
 
 app = Flask(__name__)
-# graph = db()
+graph = db()
 
 @app.route('/')
 @app.route('/home')
