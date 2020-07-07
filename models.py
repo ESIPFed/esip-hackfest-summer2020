@@ -3,13 +3,12 @@ import csv
 
 
 
-
 def db():
     with open('input.csv', 'r') as csv_file: 
         csv_reader = csv.DictReader(csv_file) # add , delimiter=',' to specify delimiter
 
         # next(csv_reader)  # skips over both header rows 
-        graph = Graph()
+        graph = Graph('http://localhost:7474/')
         for line in csv_reader:
             topic = Node("Topic", name=line['topic']) # merge later on
             application = Node("Application", name=line['name'], website=line['website'],

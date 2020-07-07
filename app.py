@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, json
 from models import db
 
 # import json
-import os.path      # for parsing input from JSON file
+# import os.path       for parsing input from JSON file
 
 # from flask_restplus import Api, Resource
 
@@ -19,12 +19,12 @@ class Get(Resource):
 # api = Api()
 
 app = Flask(__name__)
-graph = db()
+# graph = db()
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', topics = graph.nodes.match("Topic"))
+    return render_template('home.html') #, topics = graph.nodes.match("Topic")
 
 @app.route('/use_cases')
 def use_cases():
