@@ -21,10 +21,16 @@ class Get(Resource):
 app = Flask(__name__)
 graph = db()
 
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html') #, topics = graph.nodes.match("Topic")
+    topics = graph.nodes.match("Topic")
+    return render_template('home.html', topics=topics) 
 
 @app.route('/use_cases')
 def use_cases():
@@ -40,8 +46,7 @@ def session_api():
     return jsonify(list()) #list of relevant dataset nodes
 '''
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
 
 '''
 # Save results for specified topic to a JSON file
