@@ -16,13 +16,17 @@
         
         
             {% for topic in topics %}
-                <button>{{topic.name}}</button>
+                <button onclick="send()">{{topic.name}}</button>
                 <br>
             {% endfor %}
         
         
         
         <script>
+            
+            function send() {
+                
+            }
 
             function printBtn() { //goal: create a vertical line of buttons
                 //Array for topic nodes
