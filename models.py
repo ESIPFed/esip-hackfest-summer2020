@@ -3,12 +3,6 @@ from neo4j import GraphDatabase, SessionConfig
 import csv
 
 
-
-# uri = "neo4j://localhost:7687"
-# driver = GraphDatabase.driver(uri, auth=("neo4j", "password"))
-
-# session = driver.session(SessionConfig.forDatabase( "Applications" ))
-
 def db():
 
     with open('input.csv', 'r') as csv_file: 
@@ -20,30 +14,40 @@ def db():
         
         for line in csv_reader:
             
+            #if not graph.exists(Node("Topic", name=line['topic'])):
             topic = Node("Topic", name=line['topic']) # merge later on
-            
+            #if not graph.exists(Node("Application", name=line['name'], website=line['website'],
+            #   publication=line['publication'])):
             application = Node("Application", name=line['name'], website=line['website'],
                 publication=line['publication'])
-            dataset = Node("Dataset", identifier=line['identifier']) # may include a identifier TYPE property
-        
-            graph.merge(topic)
-            graph.merge(application)
-            graph.merge(dataset)
             
+            dataset = Node("Dataset", identifier=line['identifier']) # may include a identifier TYPE property
+
+            graph.merge(topic, "Topic", "name")
+            graph.merge(dataset, "Dataset", "identifier")
+
+
             graph.create(Relationship(application, "relates to", topic))
             graph.create(Relationship(application, "uses", dataset, conf_level=line['conf-level']))
-            # RELATES_TO = Relationship.type("RELATES_TO")
-            # graph.merge(RELATES_TO, "Topic", "name")
             
-            # Using official Neo4j Python Driver
-            # session.write_transaction(assign_topic, line['name'], line['topic'])
+            
 
-        # graph.schema.create_uniqueness_constraint("Topic", "name")
-        # graph.schema.create_uniqueness_constraint("Application", "name")
-        # graph.schema.create_uniqueness_constraint("Dataset", "identifier")
     return graph
 
 
+
+
+
+
+
+
+# uri = "neo4j://localhost:7687"
+# driver = GraphDatabase.driver(uri, auth=("neo4j", "password"))
+
+# session = driver.session(SessionConfig.forDatabase( "Applications" ))
+
+# Using official Neo4j Python Driver
+            # session.write_transaction(assign_topic, line['name'], line['topic'])
 
 def assign_topic(tx, application, topic):
     tx.run("CREATE (a:Application {name: $application})-[:RELATES_TO]->(t:Topic {name: $topic})", application=application, topic=topic)
