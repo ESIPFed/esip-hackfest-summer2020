@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, json
+from flask import Flask, render_template, request, redirect, url_for, jsonify, json
 from models import db
 
 # import json
@@ -32,9 +32,15 @@ def home():
     topics = graph.nodes.match("Topic")
     return render_template('home.html', topics=topics) 
 
-@app.route('/use_cases')
+@app.route('/use_cases', methods=['GET', 'POST'])
 def use_cases():
-    return render_template('use_cases.html', topic = "Flooding")
+    if request.method == 'POST':
+        topic = request.form.get['topic']
+        return render_template('use_cases.html', topic = "Flooding")
+    
+    topics = graph.nodes.match("Topic")
+    redirect(url_for('home'), topics=topics)
+    
 
 @app.route('/data')
 def data():
