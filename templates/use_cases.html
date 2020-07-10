@@ -5,10 +5,29 @@
 
 {% block main %}
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <p>Topic: {{topic}}</p>
+    </head>
+
+    <body>
+        <form method="POST" action="" style="text-align: center;">
+            <select id="topics">
+                {% for app in applications %}
+                <option value="topic">{{app.name}}</option>
+                
+                {% endfor %}
+
+            </select>
+            <input type="button" value="Submit" onclick="send()">
+        </form> 
 
 
-<p>Topic: {{topic}}</p>
+    </body>
 
+
+</html>
 
 
 

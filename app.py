@@ -22,9 +22,6 @@ app = Flask(__name__)
 graph = db()
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
 
 @app.route('/')
 @app.route('/home')
@@ -36,14 +33,43 @@ def home():
 def use_cases(topic):
     # if request.method == 'POST':
         # topic = request.form.get['topic']
-    # applications = graph.nodes.match("Application", )
+    rels = graph.match(topic, r_type="relates to", limit=None)
 
-    return render_template('use_cases.html', topic=topic)
+    applications = []
+    for rel in rels:
+        applications.append(rel.end_node)
+
+    return render_template('use_cases.html', topic=topic, 
+        applications=applications)
     
 
-@app.route('/data')
-def data():
-    return render_template('data.html')
+@app.route('/data/<application>')
+def data(application):
+    
+    datasets = graph.match(application, r_type="uses", limit=None)
+
+    dataArray = []
+
+    for data in datasets:
+        dataObj = {}
+        dataObj['identifier'] = data.end_node.identifier
+        dataArray.append(dataObj)
+
+    return jsonify({'datasets' : dataArray})
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
+
+
+
+
 
 '''
 @app.route('/api')
