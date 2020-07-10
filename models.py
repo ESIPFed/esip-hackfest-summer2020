@@ -17,13 +17,19 @@ def db():
         # next(csv_reader)  # skips over both header rows 
         graph = Graph("bolt://neo4j:ubdprototype@localhost:7687")
         graph.delete_all()
+        
         for line in csv_reader:
             
             topic = Node("Topic", name=line['topic']) # merge later on
+            
             application = Node("Application", name=line['name'], website=line['website'],
                 publication=line['publication'])
             dataset = Node("Dataset", identifier=line['identifier']) # may include a identifier TYPE property
-
+        
+            graph.merge(topic)
+            graph.merge(application)
+            graph.merge(dataset)
+            
             graph.create(Relationship(application, "relates to", topic))
             graph.create(Relationship(application, "uses", dataset, conf_level=line['conf-level']))
             # RELATES_TO = Relationship.type("RELATES_TO")

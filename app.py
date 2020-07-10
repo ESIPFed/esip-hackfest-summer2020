@@ -32,14 +32,13 @@ def home():
     topics = graph.nodes.match("Topic")
     return render_template('home.html', topics=topics) 
 
-@app.route('/use_cases', methods=['GET', 'POST'])
-def use_cases():
-    if request.method == 'POST':
-        topic = request.form.get['topic']
-        return render_template('use_cases.html', topic = "Flooding")
-    
-    topics = graph.nodes.match("Topic")
-    redirect(url_for('home'), topics=topics)
+@app.route('/use_cases/<topic>', methods=['GET', 'POST'])
+def use_cases(topic):
+    # if request.method == 'POST':
+        # topic = request.form.get['topic']
+    # applications = graph.nodes.match("Application", )
+
+    return render_template('use_cases.html', topic=topic)
     
 
 @app.route('/data')
