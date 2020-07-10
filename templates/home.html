@@ -14,13 +14,20 @@
 
     <body>
         
-        
+        <div class="dropdown">
+        <button class="dropbtn">Topic</button>
+        <div class="dropdown-content">
             {% for topic in topics %}
+                <a href="use_cases.html">{{topic.name}}</a>
+            {% endfor %}
+        </div>
+        </div>
+            
+        
+        <!--{% for topic in topics %}
                 <button onclick="send()">{{topic.name}}</button>
                 <br>
-            {% endfor %}
-        
-        
+            {% endfor %}-->
         
         <script>
             
