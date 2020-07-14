@@ -50,6 +50,7 @@
     <body>
         
         <form method='POST'>
+            {{ form.crsf_token }}
             {{ form.topic }}
             {{ form.application }}
             <input type="submit">
