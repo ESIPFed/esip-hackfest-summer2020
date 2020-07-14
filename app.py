@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, json
+
 from models import db
 
 # import json
@@ -21,12 +22,17 @@ class Get(Resource):
 app = Flask(__name__)
 graph = db()
 
+class form(FlaskForm):
 
 
 @app.route('/')
 @app.route('/home')
 def home():
     topics = graph.nodes.match("Topic")
+    
+    if request.method == 'POST':
+        return use_cases()
+
     return render_template('home.html', topics=topics) 
 
 @app.route('/use_cases/<topic>', methods=['GET', 'POST'])
