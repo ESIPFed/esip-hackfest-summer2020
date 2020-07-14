@@ -25,8 +25,7 @@ class Form(FlaskForm):
 def home():
     topics = graph.nodes.match("Topic")
     form = Form()
-    if request.method == 'POST':
-        return use_cases()
+    
 
     return render_template('home.html', form=form) # topics=topics 
 
