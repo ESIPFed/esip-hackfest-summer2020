@@ -1,13 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, json
-
+from flask_wtf import FlaskForm
+from wtforms import SelectField
 from models import db
 
-# import json
-# import os.path       for parsing input from JSON file
-
-# from flask_restplus import Api, Resource
-
-# API
 '''
 @api.route('/api')
 class Get(Resource):
@@ -21,8 +16,6 @@ class Get(Resource):
 
 app = Flask(__name__)
 graph = db()
-
-class form(FlaskForm):
 
 
 @app.route('/')
