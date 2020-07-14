@@ -49,7 +49,15 @@
 
     <body>
         
-        <form method="POST" action="/use_cases" style="text-align: center;">
+        <form method='POST'>
+            {{ form.crsf_token }}
+            {{ form.topic }}
+            {{ form.application }}
+            <input type="submit">
+        </form>
+
+
+        <!--<form method="POST" action="/use_cases" style="text-align: center;">
             <select id="topics">
                 {% for topic in topics %}
                 <option value="topic">{{topic.name}}</option>
@@ -61,7 +69,7 @@
         </form> 
         
         
-        <!--<div class="dropdown">
+   <div class="dropdown">
         <button class="dropbtn" style="text-align: center;">Topic</button>
         <div class="dropdown-content">
             {% for topic in topics %}

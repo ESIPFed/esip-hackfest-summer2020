@@ -17,16 +17,18 @@ class Get(Resource):
 app = Flask(__name__)
 graph = db()
 
+class Form(FlaskForm):
+    topic = SelectField('topic', choices=graph.nodes.match("Topic"))
+    application = SelectField('application', choices=graph.nodes.match("Application"))
 
-@app.route('/')
-@app.route('/home')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     topics = graph.nodes.match("Topic")
-    
+    form = Form()
     if request.method == 'POST':
         return use_cases()
 
-    return render_template('home.html', topics=topics) 
+    return render_template('home.html', form=form) # topics=topics 
 
 @app.route('/use_cases/<topic>', methods=['GET', 'POST'])
 def use_cases(topic):
