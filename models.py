@@ -9,7 +9,14 @@ def db():
         csv_reader = csv.DictReader(csv_file) # add , delimiter=',' to specify delimiter
 
         # next(csv_reader)  # skips over both header rows 
-        graph = Graph("bolt://neo4j:ubdprototype@localhost:7687")
+        graph = Graph("bolt://localhost:7687", auth=("neo4j", "ubdprototype"))
+
+        try:
+            graph.run("Match () Return 1 Limit 1")
+        except Exception:
+            print('Invalid connection. Is Neo4j running? Check username and password.')
+            raise Exception
+
         graph.delete_all()
         
         for line in csv_reader:
