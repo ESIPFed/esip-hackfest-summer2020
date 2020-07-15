@@ -3,46 +3,42 @@ from flask_wtf import FlaskForm
 from wtforms import SelectField
 from models import db
 
-'''
-@api.route('/api')
-class Get(Resource):
-
-    def get(self):
-        return jsonify(objects)
-
-'''
-
-# api = Api()
-
 
 app = Flask(__name__)
 app.secret_key = 'secret_key'
 graph = db()
 
+
 class Form(FlaskForm):
-    topic = SelectField('topic', choices=graph.nodes.match("Topic"))
-    application = SelectField('application', choices=graph.nodes.match("Application"))
+    topic = SelectField('topic', choices=[])
+    application = SelectField('application', choices=[])
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     topics = graph.nodes.match("Topic")
     form = Form()
+    form.topic.choices = [(topic['name']) for topic in graph.nodes.match("Topic")]
+    form.application.choices = [(app['name']) for app in graph.nodes.match("Application")]
     
+    # if request.method == 'POST':
 
     return render_template('home.html', form=form) # topics=topics 
 
-@app.route('/use_cases/<topic>', methods=['GET', 'POST'])
+
+@app.route('/use_cases/<topic>')
 def use_cases(topic):
-    # if request.method == 'POST':
-        # topic = request.form.get['topic']
-    rels = graph.match(topic, r_type="relates to", limit=None)
+    
+    apps = get_apps(topic)
 
     applications = []
-    for rel in rels:
-        applications.append(rel.end_node)
+    for app in apps:
+        print(app)
+        appObj = {}
+        appObj['name'] = app['name']
+        applications.append(appObj)
 
-    return render_template('use_cases.html', topic=topic, 
-        applications=applications)
+    return jsonify({'applications' : applications})
     
 
 @app.route('/data/<application>')
@@ -68,7 +64,14 @@ if __name__ == '__main__':
 
 
 
-
+def get_apps(topic):
+    query = '''
+        MATCH (topic:Topic)-[:RELATES_TO]->(app:Application)
+        WHERE topic = $topic
+        RETURN app AS apps
+        '''
+    
+    return graph.run(query, topic=topic)
 
 
 
@@ -79,6 +82,14 @@ def session_api():
     return jsonify(list()) #list of relevant dataset nodes
 '''
 
+'''
+@api.route('/api')
+class Get(Resource):
+
+    def get(self):
+        return jsonify(objects)
+
+'''
 
 
 '''
