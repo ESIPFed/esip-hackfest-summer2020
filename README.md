@@ -18,14 +18,14 @@ Set a password for the local database; username should be 'neo4j'
 
 Start the database
 
-Install the required python packages
+3. Install the required python packages
 
 `$ pip install -r requirements`
 
-Run the application
+4. Run the application
 
 `$ python app.py`
 
-Browse to http://localhost:5000
+5. Browse to http://localhost:5000
 
 
