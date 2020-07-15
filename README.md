@@ -10,13 +10,13 @@ Go to http://localhost:7474 and change the password for the user neo4j to be "ub
 
 2. Using Neo4J Desktop
 
-Install Neo4j Desktop application
+- Install Neo4j Desktop application
 
-Create a new project and database (using a local database for now)
+- Create a new project and database (using a local database for now)
 
-Set a password for the local database; username should be 'neo4j'
+- Set a password for the local database; username should be 'neo4j'
 
-Start the database
+- Start the database
 
 3. Install the required python packages
 
