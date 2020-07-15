@@ -14,7 +14,9 @@ class Get(Resource):
 
 # api = Api()
 
+
 app = Flask(__name__)
+app.secret_key = 'secret_key'
 graph = db()
 
 class Form(FlaskForm):
