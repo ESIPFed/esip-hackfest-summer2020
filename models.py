@@ -14,10 +14,7 @@ def db():
         
         for line in csv_reader:
             
-            #if not graph.exists(Node("Topic", name=line['topic'])):
-            topic = Node("Topic", name=line['topic']) # merge later on
-            #if not graph.exists(Node("Application", name=line['name'], website=line['website'],
-            #   publication=line['publication'])):
+            topic = Node("Topic", name=line['topic'])
             application = Node("Application", name=line['name'], website=line['website'],
                 publication=line['publication'])
             
