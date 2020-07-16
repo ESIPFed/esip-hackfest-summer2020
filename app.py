@@ -31,12 +31,7 @@ def use_cases(topic):
     
     apps = get_apps(topic)
 
-    applications = []
-    for app in apps:
-        print(app)
-        appObj = {}
-        appObj['name'] = app['name']
-        applications.append(appObj)
+    applications = [app[0] for app in apps]
 
     return jsonify({'applications' : applications})
     
@@ -66,9 +61,9 @@ if __name__ == '__main__':
 
 def get_apps(topic):
     query = '''
-        MATCH (topic:Topic)-[:RELATES_TO]->(app:Application)
-        WHERE topic = $topic
-        RETURN app AS apps
+        match p=(t:Topic)-[r:`relates to`]-(a:Application) 
+        WHERE t.name = 'Floods' 
+        RETURN a.name
         '''
     
     return graph.run(query, topic=topic)

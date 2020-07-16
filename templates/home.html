@@ -63,16 +63,15 @@
                 topic = topic_select.value;
 
                 fetch('/use_cases/' + topic).then(function(response) {
-                    response.json.then(function(data) {
+                    response.json()}).then(function(data) {
                         let optionHTML = '';
 
                         for(let application of data.applications) {
-                            optionHTML += '<option>' + application['name'] + '</option>';
+                            optionHTML += '<option>' + application + '</option>';
                         }
 
                         app_select.innerHTML = optionHTML;
                     });
-                });
             }
         </script>
 
