@@ -1,13 +1,61 @@
-topic,name,website,publication,conf-level,identifier
-Floods,TRMM-based Early Warning System (EWS),N/A,10.5194/nhess-12-443-2012,90,(DOI) 10.5067/TRMM/TMPA/DAY/7
-Floods,ITO-HOSOYA,N/A,N/A,60,(DOI) 10.5067/TRMM/TMPA/3H/7
-Floods,HEC-HMS,https://www.hec.usace.army.mil/software/hec-hms/,10.1007/s12517-015-2228-2,90,(DOI) 10.5067/TRMM/TMPA/3H/7
-Floods,Wangchhu River Basin Flood Forecasting Model,N/A,10.5539/jgg.v7n2P70,90,(DOI) 10.5067/TRMM/TMPA/DAY/7
-Floods,SERVIR-Africa Operational Flood Warning System,N/A,10.1007/s11069-008-9324-5,90,(DOI) 10.5067/TRMM/TMPA/3H-E/7
-Floods,Global Flood Monitoring Framework,N/A,10.1007/978-90-481-2915-7_15,90,(DOI) 10.5067/TRMM/TMPA/3H-E/7
-Floods,UMD Global Flood Monitoring System,http://flood.umd.edu/,10.1002/2013WR014710,90,(DOI) 10.5067/TRMM/TMPA/3H-E/7
-Floods,TRMM-based Flood Detection System,N/A,10.1016/j.jag.2010.11.003,90,(DOI) 10.5067/TRMM/TMPA/3H-E/7
-Floods,Dartmouth Flood Observatory,https://floodobservatory.colorado.edu/,N/A,60,(DOI) 10.5067/YL62FUZLAJUT
-Landslides,SLIP Model  ,https://gpm.nasa.gov/articles/automating-detection-landslides,10.1175/EI-D-17-0022.1,90,(DOI) 10.5067/MODIS/MCD12Q1.006
-Landslides,LHASA,https://gpm.nasa.gov/applications/global-landslide-model,10.1002/2017EF000715,90,(DOI) 10.5067/GPM/IMERG/3B-HH-E/06
-Water flow,HYPE Model,http://www.smhi.net/hype/wiki/doku.php,10.25073/jaec.201931.215,90,(DOI) 10.5067/TRMM/TMPA/DAY/7
+topic,name,website,publication,conf-level,identifier,comments
+Floods,TRMM-based Early Warning System (EWS),N/A,doi:10.5194/nhess-12-443-2012,90,doi:10.5067/TRMM/TMPA/DAY/7,,
+Floods,ITO-HOSOYA,N/A,N/A,60,doi:10.5067/TRMM/TMPA/3H/7,,
+Floods,HEC-HMS,https://www.hec.usace.army.mil/software/hec-hms/,doi:10.1007/s12517-015-2228-2,90,doi:10.5067/TRMM/TMPA/3H/7,,
+Floods,Wangchhu River Basin Flood Forecasting Model,N/A,doi:10.5539/jgg.v7n2P70,90,doi:10.5067/TRMM/TMPA/DAY/7,,
+Floods,SERVIR-Africa Operational Flood Warning System,N/A,doi:10.1007/s11069-008-9324-5,90,doi:10.5067/TRMM/TMPA/3H-E/7,,
+Floods,Global Flood Monitoring Framework,https://www.globalfloodmonitor.org/,doi:10.1007/978-90-481-2915-7_15,90,doi:10.5067/TRMM/TMPA/3H-E/7,,
+Floods,UMD Global Flood Monitoring System,http://flood.umd.edu/,doi:10.1002/2013WR014710,90,doi:10.5067/TRMM/TMPA/3H-E/7,,
+Floods,TRMM-based Flood Detection System,https://trmm.gsfc.nasa.gov/,doi:10.1016/j.jag.20doi:10.11.003,90,doi:10.5067/TRMM/TMPA/3H-E/7,https://link.springer.com/article/10.1007%2Fs11069-008-9324-5,
+Floods,Dartmouth Flood Observatory,https://floodobservatory.colorado.edu/,N/A,60,doi:10.5067/YL62FUZLAJUT,,
+Landslides,SLIP Model  ,https://gpm.nasa.gov/articles/automating-detection-landslides,doi:10.1175/EI-D-17-0022.1,90,doi:10.5067/MODIS/MCD12Q1.006,,
+Landslides,LHASA,https://gpm.nasa.gov/applications/global-landslide-model,doi:10.1002/2017EF000715,90,doi:10.5067/GPM/IMERG/3B-HH-E/06,,
+Water flow,HYPE Model,http://www.smhi.net/hype/wiki/doku.php,doi:10.25073/jaec.201931.215,90,doi:10.5067/TRMM/TMPA/DAY/7,,
+Sea level ,NASA Sea level portal,https://sealevel.nasa.gov/,,90,doi: 10.5067/GMSLM-TJ142,Longterm global sea level (Altimeters)  New York City Panel on Climate Change 2019 Report Chapter 3: Sea Level Rise    https://doi.org/10.1111/nyas.14006  ??,
+Hydrology,NASA Sea level portal,https://sealevel.nasa.gov/,,90,doi: 10.5067/TEMSC-3JC62,"Longterm, global  and large scale hydrology (GRACE and GRACE-FO)",
+Streamflow Forecast,NWS AHPS,https://water.weather.gov/ahps/index.php,,,,,
+Streamflow,National Water Informatin System,https://waterdata.usgs.gov/nwis, https://doi.org/10.5066/F7P55KJN,,,,
+Precipitation,NOAA NWS Weather Prediction Center Quantitative Precipitation Forecast (QPF),https://www.wpc.ncep.noaa.gov/qpf/qpf2.shtml,,,,"These ""Quantitative Precipitation Forecasts"" were indicated by one of the fire managers as critical to assessing flooding risks.  A variant = ""Quantitative Precipitation Estimates"" (not sure about exact relationship).",
+Lake heights,G-REALM,https://ipad.fas.usda.gov/cropexplorer/global_reservoir/,loads,,doi: 10.5067/UCLRS-GREV2,derived from satellite altimetry,
+river heights,GRRATS,https://essd.copernicus.org/articles/12/137/2020/,"https://doi.org/10.5194/essd-2019-84",,doi: 10.5067/PSGRA-SA2V2,derived from satellite altimetry,
+lake area,,,,,doi: 10.5067/UCLRS-AREV2,derived from MODIS,
+Evapotranspiration,SSEBop Actual Evapotranspiration Attributed to 12-digit Hydrologic Unit Code Watersheds,http://cida.usgs.gov/thredds/catalog/ssebopeta/files/catalog.html,http://dx.doi.org/10.1111/jawr.12057,,,estimate evapotranspiration between storms,
+lake and river heights,Hydro-Web/Theia,http://hydroweb.theia-land.fr/,,,,Derived heights from satellite altimeters provided as a time series with multiple file formats by LEGOS/CTOH and CNES,
+Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1029/2007EO020003,,"doi:10.5067/TRMM/TMPA/3H/7, 10.5067/TRMM/TMPA/DAY/7, 10.5067/TRMM/TMPA/MONTH/7, 10.5067/TRMM/TMPA/3H-E/7, 10.5067/TRMM/TMPA/DAY-E/7",Listed are 5 datasets from TRMM. There are more datasets that provide precipitation data in Giovanni,
+Floods,GLOFAS,https://www.globalfloods.eu/,"doi:10.5194/hess-17-1161-2013, 2013; https://doi.org/10.5194/gmd-11-3327-2018, 2018",,,,
+,,,,,,,
+Inundation,NWS AHPS Inundation,https://water.weather.gov/ahps/inundation.php,,,,,
+Streamflow (forecast),NOAA Office of Water Prediction,https://water.noaa.gov/map#forecast-chart,,,,,
+hydrology,Hydroshare/CUAHSI,https://www.hydroshare.org/,https://help.hydroshare.org/about-hydroshare/publish/,,,NSF funded project to distribute and visulize hydrology data,
+Flood Control,Corps Water Resources Data,http://water.usace.army.mil/a2w/f?p=100:1:0:#,,,,,
+Flood monitoring Dashboard,,https://community.esri.com/thread/232232-flood-gauge-monitoring-dashboards,,,,,
+hydrology,DAHITI,https://dahiti.dgfi.tum.de/en/api/doc/,https://dahiti.dgfi.tum.de/en/publications/,,,"derived from satellite altimetry, offers API",
+Coastal flooding,NOAA Coastal Flood Exposure Mapper,https://coast.noaa.gov/digitalcoast/tools/flood-exposure.html,https://coast.noaa.gov/data/digitalcoast/pdf/flood-exposure-data.pdf,90,NOAA Technical Report NOS CO-OPS 086,NOAA High-tide flooding threshholds; no DOI provided but there is a doc giving links to the datasets used in this application at: https://coast.noaa.gov/data/digitalcoast/pdf/flood-exposure-data.pdf,
+Coastal flooding,NOAA Coastal Flood Exposure Mapper,https://coast.noaa.gov/digitalcoast/tools/flood-exposure.html,https://coast.noaa.gov/data/digitalcoast/pdf/flood-exposure-data.pdf,90,https://maps.coast.noaa.gov/arcgis/rest/services/FloodExposureMapper/CFEM_FEMAFloodZones/MapServer,FEMA flood zone maps; no DOI provided but there is a doc giving links to the datasets used in this application at: https://coast.noaa.gov/data/digitalcoast/pdf/flood-exposure-data.pdf,
+Coastal flooding,NOAA Coastal Flood Exposure Mapper,https://coast.noaa.gov/digitalcoast/tools/flood-exposure.html,https://coast.noaa.gov/data/digitalcoast/pdf/flood-exposure-data.pdf,90,https://www.nhc.noaa.gov/nationalsurge/,"National Hurrican Center storm surge flooding scenarios derived from Sea, Lake, and  Overland Surges from Hurricanes (SLOSH) model, paper about dataset at: http://dx.doi.org/10.1175/WCAS–D–14–00049.1 ",
+Coastal flooding,NOAA Coastal Flood Exposure Mapper,https://coast.noaa.gov/digitalcoast/tools/flood-exposure.html,https://coast.noaa.gov/data/digitalcoast/pdf/flood-exposure-data.pdf,90,https://coast.noaa.gov/digitalcoast/tools/slr.html,Sea level rise inundation scenarios derived from data created for the Sea Level Rise and Coastal Flooding Impacts Viewer -- this one links to another NOAA Digital Coast application for this dataset,
+Citizen science flood reports,"NOAA ""What's Your Water Level?""",https://noaa.maps.arcgis.com/apps/MapSeries/index.html?appid=8e4a278576964f47b4fc050e51f344ca,None,90,https://noaa.maps.arcgis.com/apps/MapSeries/index.html?appid=8e4a278576964f47b4fc050e51f344ca,The public can submit reports on their local water level at https://noaa.maps.arcgis.com/apps/GeoForm/index.html?appid=3b55f51105d64d5895f252374e7c902a and the data are aggregated on this application. Kinda cool but doesn't seem to have gotten much exposure yet (5 reports submitted in the past month),
+Flood Alert,USGS Flood Alert System,https://maps.waterdata.usgs.gov/mapper/wateralert/index.html,DOI For the entire waterdata.usgs set http://dx.doi.org/10.5066/F7P55KJN Further metadata links are no good,,,wondering about potential for setting alerts for real time at a system of gages,
+,,,,,,,
+Flood Control,SEDAC Global Reservoir and Dams,https://sedac.ciesin.columbia.edu/theme/water/maps/services,,,https://doi.org/10.7927/H4HH6H08,,
+Flood Control,Global Georeference Database of Dams (GOODD),https://www.nature.com/articles/s41597-020-0362-5,https://doi.org/10.6084/m9.figshare.10538486,,,,
+,,,,,,,
+Flood/Snow/Hydrology,Daily US Snowfall and Depth,https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/,doi.10.1175/JTECH-D-11-00103.1,,None,Data repository,
+Marsh ,Sea Level Affecting Marshes   Model (SLAMM),http://www.warrenpinnacle.com/prof/SLAMM/,https://doi.org/10.1016/j.ecolmodel.2017.05.028,,,,
+Various,NWS Enhanced Data Display ,https://preview.weather.gov/edd/,,,,,
+Coastal flooding,CERA Coastal Emergency Risks Assessment,https://cera.coastalrisk.live/,,,,ADCIRC Model Storm Surge Guidance for Emergency Managers and Decision Makers. CERA is based upon work supported by Louisiana Sea Grant at LSU and the U.S. Department of Homeland Security under Grant Award Number DHS-14-ST-061-COE-001A.,
+Flood Control,National Levee Database,https://levees.sec.usace.army.mil/#/,,,,,
+,,,,,,,
+,,,,,,,
+Storm surge,ADvanced CIRCulation (ADCIRC) Model,https://adcirc.org/,https://doi.org/10.1007/s10584-019-02575-7,0.9,,,
+Soil Moisture,"Soil Moisture Monitoring and Prediction
+over U.S.A",https://www.cpc.ncep.noaa.gov/soilmst/index_jh.html,https://doi.org/10.1007/s10584-019-02575-7 ,,,,
+Transboundary Water Management,Transboundary Water Management Data Explorer,http://alpha.blueraster.io/nasa/transboundary-water/develop/#,,,,,
+Historical Flood,Global Surface Water Explorer,https://global-surface-water.appspot.com/,doi:10.1038/nature20584,,,,
+Precipitation,Community Collaborative Rain Hail Snow Network,https://www.cocorahs.org/,,,,,
+Soil Moisture,"NASA SMAP L2 Radar Half-Orbit 3 km EASE-Grid Soil Moisture, Version 3",https://nsidc.org/data/SPL2SMA/versions/3,,,https://doi.org/10.5067/J8SGO1E0Y9XZ.,,
+Wetland loss,ADvanced CIRCulation (ADCIRC) Model,https://adcirc.org/,https://doi.org/10.1016/j.coastaleng.2018.03.006,,,,
+,,,,,,,
+,,,,,,,
+Soil Moisture,"NASA SMAP L4 Global 3-hourly 9 km EASE-Grid Surface and Root Zone Soil Moisture Geophysical Data, Version 4",https://nsidc.org/data/SPL4SMGP/versions/4,,,https://doi.org/10.5067/KPJNN2GI1DQR.,,
+,Live Stream Gauges (Flooding),,,,,list of (live) stream gauge data contributors; https://www.arcgis.com/home/item.html?id=2b245b7f816044d7a779a61a5844be23,https://waterdata.usgs.gov/nwis/rt
