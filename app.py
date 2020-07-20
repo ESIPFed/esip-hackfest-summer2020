@@ -17,12 +17,17 @@ class Form(FlaskForm):
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = Form()
-    form.topic.choices = [(topic['name']) for topic in graph.nodes.match("Topic")]
+    form.topic.choices = [topic['name'] for topic in graph.nodes.match("Topic")]
     # form.application.choices = [(app['name']) for app in graph.nodes.match("Application")]
     
     if request.method == 'POST':
         topic = request.form['topic']
         app = request.form['application']
+
+        # get datasets used by app
+        datasets = get_datasets(app)
+        
+
         return render_template('data.html', topic=topic, app=app)
 
     return render_template('home.html', form=form) # topics=topics 
@@ -40,16 +45,17 @@ def use_cases(topic):
 @app.route('/data/<application>')
 def data(application):
     
-    datasets = graph.match(application, r_type="uses", limit=None)
+    data = get_datasets(application)
+    datasets = [d[0] for d in data]
 
-    dataArray = []
 
+    '''
     for data in datasets:
         dataObj = {}
         dataObj['identifier'] = data.end_node.identifier
         dataArray.append(dataObj)
-
-    return jsonify({'datasets' : dataArray})
+    '''
+    return jsonify({'datasets' : datasets})
 
 
 
@@ -69,6 +75,15 @@ def get_apps(topic):
     
     return graph.run(query, topic=topic)
 
+
+def get_datasets(app):
+    query = '''
+        match p=(a:Application)-[r:`uses`]-(d:Dataset) 
+        WHERE a.name = $app
+        RETURN d
+        '''
+
+    return graph.run(query, app=app)
 
 
 
