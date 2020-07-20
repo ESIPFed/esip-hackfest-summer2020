@@ -11,17 +11,19 @@ graph = db()
 
 class Form(FlaskForm):
     topic = SelectField('topic', choices=[])
-    application = SelectField('application', choices=[])
+    application = SelectField('application', choices=[("", "---")])
 
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    topics = graph.nodes.match("Topic")
     form = Form()
     form.topic.choices = [(topic['name']) for topic in graph.nodes.match("Topic")]
-    form.application.choices = [(app['name']) for app in graph.nodes.match("Application")]
+    # form.application.choices = [(app['name']) for app in graph.nodes.match("Application")]
     
-    # if request.method == 'POST':
+    if request.method == 'POST':
+        topic = request.form['topic']
+        app = request.form['application']
+        return render_template('data.html', topic=topic, app=app)
 
     return render_template('home.html', form=form) # topics=topics 
 
@@ -30,11 +32,10 @@ def home():
 def use_cases(topic):
     
     apps = get_apps(topic)
-
     applications = [app[0] for app in apps]
-
-    return jsonify({'applications' : applications})
     
+    return jsonify({'applications' : applications})
+     
 
 @app.route('/data/<application>')
 def data(application):
@@ -62,7 +63,7 @@ if __name__ == '__main__':
 def get_apps(topic):
     query = '''
         match p=(t:Topic)-[r:`relates to`]-(a:Application) 
-        WHERE t.name = 'Floods' 
+        WHERE t.name = $topic
         RETURN a.name
         '''
     

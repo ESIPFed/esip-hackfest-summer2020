@@ -1,4 +1,6 @@
 topic,name,website,publication,conf-level,identifier,comments
+Landslides,SLIP Model  ,https://gpm.nasa.gov/articles/automating-detection-landslides,doi:10.1175/EI-D-17-0022.1,90,doi:10.5067/MODIS/MCD12Q1.006,,
+Landslides,LHASA,https://gpm.nasa.gov/applications/global-landslide-model,doi:10.1002/2017EF000715,90,doi:10.5067/GPM/IMERG/3B-HH-E/06,,
 Floods,TRMM-based Early Warning System (EWS),N/A,doi:10.5194/nhess-12-443-2012,90,doi:10.5067/TRMM/TMPA/DAY/7,,
 Floods,ITO-HOSOYA,N/A,N/A,60,doi:10.5067/TRMM/TMPA/3H/7,,
 Floods,HEC-HMS,https://www.hec.usace.army.mil/software/hec-hms/,doi:10.1007/s12517-015-2228-2,90,doi:10.5067/TRMM/TMPA/3H/7,,
@@ -8,8 +10,6 @@ Floods,Global Flood Monitoring Framework,https://www.globalfloodmonitor.org/,doi
 Floods,UMD Global Flood Monitoring System,http://flood.umd.edu/,doi:10.1002/2013WR014710,90,doi:10.5067/TRMM/TMPA/3H-E/7,,
 Floods,TRMM-based Flood Detection System,https://trmm.gsfc.nasa.gov/,doi:10.1016/j.jag.20doi:10.11.003,90,doi:10.5067/TRMM/TMPA/3H-E/7,https://link.springer.com/article/10.1007%2Fs11069-008-9324-5,
 Floods,Dartmouth Flood Observatory,https://floodobservatory.colorado.edu/,N/A,60,doi:10.5067/YL62FUZLAJUT,,
-Landslides,SLIP Model  ,https://gpm.nasa.gov/articles/automating-detection-landslides,doi:10.1175/EI-D-17-0022.1,90,doi:10.5067/MODIS/MCD12Q1.006,,
-Landslides,LHASA,https://gpm.nasa.gov/applications/global-landslide-model,doi:10.1002/2017EF000715,90,doi:10.5067/GPM/IMERG/3B-HH-E/06,,
 Water flow,HYPE Model,http://www.smhi.net/hype/wiki/doku.php,doi:10.25073/jaec.201931.215,90,doi:10.5067/TRMM/TMPA/DAY/7,,
 Sea level ,NASA Sea level portal,https://sealevel.nasa.gov/,,90,doi: 10.5067/GMSLM-TJ142,Longterm global sea level (Altimeters)  New York City Panel on Climate Change 2019 Report Chapter 3: Sea Level Rise    https://doi.org/10.1111/nyas.14006  ??,
 Hydrology,NASA Sea level portal,https://sealevel.nasa.gov/,,90,doi: 10.5067/TEMSC-3JC62,"Longterm, global  and large scale hydrology (GRACE and GRACE-FO)",

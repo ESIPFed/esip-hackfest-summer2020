@@ -1,5 +1,4 @@
 from py2neo import Graph, Node, Relationship
-from neo4j import GraphDatabase, SessionConfig
 import csv
 
 
@@ -28,6 +27,7 @@ def db():
             dataset = Node("Dataset", identifier=line['identifier']) # may include a identifier TYPE property
 
             graph.merge(topic, "Topic", "name")
+            graph.merge(application, "Application", "name")
             graph.merge(dataset, "Dataset", "identifier")
 
 
