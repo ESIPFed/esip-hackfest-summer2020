@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
@@ -7,76 +6,57 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <p style="text-align: center;">Choose a topic:</p>
-        <style>
 
-            .dropbtn {
-                background-color: black;
-                color: white;
-                padding: 18px;
-                font-size: 14px;
-                border: none;
-            }
-            
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-            
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: lightgrey;
-                min-width: 150px;
-                z-index: 1;
-            }
-            
-            .dropdown-content a {
-                color: black;
-                padding: 12px 14px;
-                text-decoration: none;
-                display: block;
-            }
-            
-            .dropdown-content a:hover {background-color: white;}
-            .dropdown:hover .dropdown-content {display: block;}
-            .dropdown:hover .dropbtn {background-color: grey;}
-            
-        </style>
-    </head>
+<head>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
 
-    <body>
-        
-        <form method='POST'>
-            {{ form.crsf_token }}
-            {{ form.topic }}
-            {{ form.application }}
-            <input type="submit">
-        </form>
-        <script>
-            let topic_select = document.getElementById('topic');
-            let app_select = document.getElementById('application');
+    <br><br><br><br><br>
+    <!--
+    <img src="templates/graphdb.png" alt="graphdb" class="center"/>
+    -->
+    <br><br>
+    <p style="text-align: center;">Choose a topic and application:</p>
+    <!--Any extra style choices can be added below-->
 
-            topic_select.onchange = function() {
-                topic = topic_select.value;
+</head>
 
-                fetch('/use_cases/' + topic).then(function(response) {
-                    response.json().then(function(data) {
-                        let optionHTML = '';
+<body>
+    <br>
+    <form method='POST' style="text-align: center;">
+        {{ form.crsf_token }}
+        {{ form.topic }}
+        {{ form.application }}
+        <input type="submit">
+    </form>
+    <script>
+        let topic_select = document.getElementById('topic');
+        let app_select = document.getElementById('application');
 
-                        for(application of data.applications) {
-                            optionHTML += '<option>' + application + '</option>';
-                        }
+        topic_select.onchange = function () {
+            topic = topic_select.value;
 
-                        app_select.innerHTML = optionHTML;
-                    });
-                });    
-            }
-        </script>
+            fetch('/use_cases/' + topic).then(function (response) {
+                response.json().then(function (data) {
+                    let optionHTML = '';
 
-        <!--<form method="POST" action="/use_cases" style="text-align: center;">
+                    for (application of data.applications) {
+                        optionHTML += '<option>' + application + '</option>';
+                    }
+
+                    app_select.innerHTML = optionHTML;
+                });
+            });
+        }
+    </script>
+
+    <!--<form method="POST" action="/use_cases" style="text-align: center;">
             <select id="topics">
                 {% for topic in topics %}
                 <option value="topic">{{topic.name}}</option>
@@ -103,12 +83,12 @@
                 <button onclick="send()">{{topic.name}}</button>
                 <br>
             {% endfor %}-->
-        
-    
-        
 
-    </body>
-    
+
+
+
+</body>
+
 
 
 

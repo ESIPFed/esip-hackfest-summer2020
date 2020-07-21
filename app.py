@@ -25,10 +25,12 @@ def home():
         app = request.form['application']
 
         # get datasets used by app
-        datasets = get_datasets(app)
+        data = get_datasets(app)
+        datasets = [d[0] for d in data]
+            
         
-
-        return render_template('data.html', topic=topic, app=app)
+        return jsonify({'datasets' : datasets})
+        #return render_template('data.html', topic=topic, app=app, datasets=datasets)
 
     return render_template('home.html', form=form) # topics=topics 
 
@@ -48,13 +50,6 @@ def data(application):
     data = get_datasets(application)
     datasets = [d[0] for d in data]
 
-
-    '''
-    for data in datasets:
-        dataObj = {}
-        dataObj['identifier'] = data.end_node.identifier
-        dataArray.append(dataObj)
-    '''
     return jsonify({'datasets' : datasets})
 
 
