@@ -12,10 +12,10 @@ Floods,Dartmouth Flood Observatory,https://floodobservatory.colorado.edu/,N/A,60
 Floods,SEDAC Global Reservoir and Dams,https://sedac.ciesin.columbia.edu/theme/water/maps/services,,60,doi: 10.7927/H4HH6H08
 Floods,Flood Factor,,,60,doi: 10.1002/2014EF000239
 Floods,NRT Global Flood Map ,https://floodmap.gsfc.nasa.gov,,60,doi: 10.5067/MODIS/MOD02QKM.NRT.061
-Landslides,SLIP Model  ,https://gpm.nasa.gov/articles/automating-detection-landslides,10.1175/EI-D-17-0022.1,90,doi: 10.5067/MODIS/MCD12Q1.006
+Landslides,SLIP Model,https://gpm.nasa.gov/articles/automating-detection-landslides,10.1175/EI-D-17-0022.1,90,doi: 10.5067/MODIS/MCD12Q1.006
 Landslides,LHASA,https://gpm.nasa.gov/applications/global-landslide-model,10.1002/2017EF000715,90,doi: 10.5067/GPM/IMERG/3B-HH-E/06
 Water flow,HYPE Model,http://www.smhi.net/hype/wiki/doku.php,10.25073/jaec.201931.215,90,doi: 10.5067/TRMM/TMPA/DAY/7
-Sea level ,NASA Sea Level Portal,https://sealevel.nasa.gov/,,90,doi: 10.5067/GMSLM-TJ142
+Sea level,NASA Sea Level Portal,https://sealevel.nasa.gov/,,90,doi: 10.5067/GMSLM-TJ142
 Hydrology,NASA Sea Level Portal,https://sealevel.nasa.gov/,,90,doi: 10.5067/TEMSC-3JC62
 Lake heights,G-REALM,https://ipad.fas.usda.gov/cropexplorer/global_reservoir/,loads,60,doi: 10.5067/UCLRS-GREV2
 River heights,GRRATS,https://essd.copernicus.org/articles/12/137/2020/,"https://doi.org/10.5194/essd-2019-84
@@ -25,6 +25,6 @@ Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1
 Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1029/2007EO020005,60,doi: 10.5067/TRMM/TMPA/MONTH/7
 Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1029/2007EO020006,60,doi: 10.5067/TRMM/TMPA/3H-E/7
 Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1029/2007EO020007,60,doi: 10.5067/TRMM/TMPA/DAY-E/7
-Snowfall,Snow Data Assimilation dataset ,https://nsidc.org/data/G02158,,60,doi: 10.7265/N5TB14TC
+Snowfall,Snow Data Assimilation Dataset,https://nsidc.org/data/G02158,,60,doi: 10.7265/N5TB14TC
 Soil Moisture,NASA SMAP Level-2 Soil Moisture Product,https://nsidc.org/data/SPL2SMA/versions/3,,60,doi: 10.5067/J8SGO1E0Y9XZ.
 Soil Moisture,NASA SMAP Level-4 Soil Moisture Product,https://nsidc.org/data/SPL4SMGP/versions/4,,60,doi: 10.5067/KPJNN2GI1DQR.
