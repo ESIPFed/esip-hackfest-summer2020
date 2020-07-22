@@ -28,9 +28,8 @@ def home():
         data = get_datasets(app)
         datasets = [d[0] for d in data]
             
-        
-        return jsonify({'datasets' : datasets})
-        #return render_template('data.html', topic=topic, app=app, datasets=datasets)
+        #return jsonify({'datasets' : datasets})
+        return render_template('data.html', topic=topic, app=app, datasets=datasets)
 
     return render_template('home.html', form=form) # topics=topics 
 

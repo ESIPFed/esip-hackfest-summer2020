@@ -1,39 +1,37 @@
 {% extends 'base.html' %}
 
-{% block title %}Datasets{% endblock %}
+{% block title %}Results{% endblock %}
 
 {% block main %}
 
 
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <p>Topic: {{topic}}</p>
-        <p>Application: {{app}}</p>
 
-    </head>
+<head>
+    <br><br><br>
+    <h3>Topic: {{topic}}</h3>
+    <h3>Application: {{app}}</h3><br>
 
-    <body>
-        
-        <!--List dataset information here-->
-        
-        
+</head>
 
-    </body>
+<body>
+
+    <!--List dataset information here-->
+    <p>Relevant Datasets:</p>
+    <ul>
+        {% for data in datasets %}
+        <li><a href={{data.identifier}} target="_blank">{{data.identifier}}</a></li>
+
+        {% endfor %}
+
+    </ul>
     
-
-
-
+</body>
 
 
 
 </html>
-
-
-
-
-
 
 
 

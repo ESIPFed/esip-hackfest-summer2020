@@ -17,13 +17,8 @@
             vertical-align: middle;
         }
     </style>
-
-    <br><br><br><br><br>
-    <!--
-    <img src="../templates/graphdb.jpg" alt="graphdb" class="center"/>
-    -->
     
-    <br><br>
+    <br><br><br>
     <p style="text-align: center;">Choose a topic and application:</p>
     <!--Any extra style choices can be added below-->
 
@@ -36,7 +31,12 @@
         {{ form.topic }}
         {{ form.application }}
         <input type="submit">
+    <a href="/">
+    <input type="button" value="Clear">
+    </a>
     </form>
+    
+    
     <script>
         let topic_select = document.getElementById('topic');
         let app_select = document.getElementById('application');
