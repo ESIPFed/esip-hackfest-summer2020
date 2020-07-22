@@ -4,9 +4,9 @@ Need a Neo4j database running:
 
 1. If using Docker:
 
-`$ docker run -p 7867:7867 -p 7474:7474 neo4j`
+`$ docker run -d -e NEO4J_AUTH=neo4j/ubdprototype -p 7687:7687 -p 7474:7474 --name neo4j --rm neo4j`
 
-Go to http://localhost:7474 and change the password for the user neo4j to be "ubdprototype"
+(To stop Neo4j, `docker stop neo4j`. The docker container will be automatically removed.)
 
 2. Using Neo4J Desktop
 
