@@ -81,40 +81,5 @@ def get_datasets(app):
 
 
 
-'''
-@app.route('/api')
-def session_api():
-    return jsonify(list()) #list of relevant dataset nodes
-'''
 
-'''
-@api.route('/api')
-class Get(Resource):
-
-    def get(self):
-        return jsonify(objects)
-
-'''
-
-
-'''
-# Save results for specified topic to a JSON file
-
-# Usage cases dictionary
-usages = {} 
-
-# Iterates through returned applications
-for(a in applications):
-    usages[a] = {'name': application.name, 
-    'website': application.website, 'year_published' = application.year}
-
-# Iterates through returned papers
-for(p in papers):
-    usages[p] = {'title': paper.title, 'doi': paper.doi, 'year': paper.year}
-
-with open('usages.json', 'w') as usage_file:
-    json.dump(usages, usage_file)
-
-
-'''
 

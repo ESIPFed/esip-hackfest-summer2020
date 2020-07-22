@@ -42,19 +42,3 @@ def db():
 
 
 
-
-
-
-# uri = "neo4j://localhost:7687"
-# driver = GraphDatabase.driver(uri, auth=("neo4j", "password"))
-
-# session = driver.session(SessionConfig.forDatabase( "Applications" ))
-
-# Using official Neo4j Python Driver
-            # session.write_transaction(assign_topic, line['name'], line['topic'])
-
-def assign_topic(tx, application, topic):
-    tx.run("CREATE (a:Application {name: $application})-[:RELATES_TO]->(t:Topic {name: $topic})", application=application, topic=topic)
-
-
-
