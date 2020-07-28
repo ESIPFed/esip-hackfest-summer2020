@@ -10,7 +10,7 @@ Need a Neo4j database running:
 
 2. Using Neo4J Desktop
 
-- Install Neo4j Desktop application
+- Install Neo4j Desktop application at https://neo4j.com/download/
 
 - Create a new project and database (using a local database for now)
 
