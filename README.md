@@ -12,15 +12,19 @@ Need a Neo4j database running:
 
 - Install Neo4j Desktop application at https://neo4j.com/download/
 
-- Create a new project and database (using a local database for now)
+- Start up Neo4j Desktop, click New Project, and then Add Database.
 
-- Set a password for the local database; username should be 'neo4j'
+- Select "Set up a local database" and enter a name for your database.
 
-- Start the database
+- Set password as 'ubdprototype'.
+
+- Start the database.
+
+- Clone this repository. cd into the project directory. 
 
 3. Install the required python packages
 
-`$ pip install -r requirements`
+`$ pip install -r requirements.txt`
 
 4. Run the application
 
