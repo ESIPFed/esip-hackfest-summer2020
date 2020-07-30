@@ -1,5 +1,8 @@
 # ubd-prototype
 
+General instructions for set up:
+
+
 Need a Neo4j database running:
 
 1. If using Docker:
@@ -12,13 +15,13 @@ Need a Neo4j database running:
 
 - Install Neo4j Desktop application at https://neo4j.com/download/
 
-- Start up Neo4j Desktop, click New Project, and then Add Database.
+- Start up Neo4j Desktop, click 'New' to create a new project, and then 'Add Database'
 
-- Select "Set up a local database" and enter a name for your database.
+- Select "Set up a local database" and enter a name for your database
 
-- Set password as 'ubdprototype'.
+- Set password as 'ubdprototype'
 
-- Start the database.
+- Start the database
 
 - Clone this repository. cd into the project directory. 
 
@@ -31,5 +34,19 @@ Need a Neo4j database running:
 `$ python app.py`
 
 5. Browse to http://localhost:5000
+
+
+Any questions or suggestions for improvement?
+Questions - email maggieqzhu@yahoo.com 
+Suggestions - submit a pull request
+
+
+
+
+Ways to contribute to this project: 
+
+- Redesign this application to be compatible with a remote Neo4j database (with pass
+- Automate the relationship foraging process (will likely involve web scraping and/or ML)
+
 
 
