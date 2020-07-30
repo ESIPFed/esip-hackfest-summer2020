@@ -25,5 +25,5 @@ Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1
 Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1029/2007EO020006,60,http://dx.doi.org/10.5067/TRMM/TMPA/3H-E/7
 Precipitation,NASA Giovanni,https://giovanni.gsfc.nasa.gov/,https://doi.org/10.1029/2007EO020007,60,http://dx.doi.org/10.5067/TRMM/TMPA/DAY-E/7
 Snowfall,Snow Data Assimilation Dataset,https://nsidc.org/data/G02158,N/A,60,http://dx.doi.org/10.7265/N5TB14TC
-Soil Moisture,NASA SMAP Level-2 Soil Moisture Product,https://nsidc.org/data/SPL2SMA/versions/3,N/A,60,http://dx.doi.org/10.5067/J8SGO1E0Y9XZ.
-Soil Moisture,NASA SMAP Level-4 Soil Moisture Product,https://nsidc.org/data/SPL4SMGP/versions/4,N/A,60,http://dx.doi.org/10.5067/KPJNN2GI1DQR.
+Soil Moisture,NASA SMAP Level-2 Soil Moisture Product,https://nsidc.org/data/SPL2SMA/versions/3,N/A,60,http://dx.doi.org/10.5067/J8SGO1E0Y9XZ
+Soil Moisture,NASA SMAP Level-4 Soil Moisture Product,https://nsidc.org/data/SPL4SMGP/versions/4,N/A,60,http://dx.doi.org/10.5067/KPJNN2GI1DQR
