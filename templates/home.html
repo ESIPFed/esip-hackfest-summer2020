@@ -5,30 +5,81 @@
 {% block main %}
 
 <!DOCTYPE html>
-<html>
+
+<html class="myFontClass">
 
 <head>
+    <!--Any extra style choices can be added below-->
     <style>
+
         .center {
-            /* display: block;
+            display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 50%; */
-            vertical-align: middle;
         }
+
+        .menu-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .button-container {
+            width: 520px;
+            background: rgb(80, 80, 80);
+            overflow-y: auto;
+            border-radius: 15px;
+            
+        }
+
+        .button-container>a {
+            width: 100px;
+            height: 100px;
+            float: left;
+            background: lightgray;
+            margin: 15px;
+            border-radius: 15px;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 25px;
+            font-family: 'Helvetica';
+            font-size: 12px;
+            
+        }
+
     </style>
-    
+
     <br><br><br>
-    <p style="text-align: center;">Choose a topic and application:</p>
+    <p style="text-align: center; color: whitesmoke">CHOOSE A TOPIC:</p>
+
 
 </head>
 
 <body>
     <br>
+    <div class="menu-container">
+        <div class="button-container">
+
+            {% for topic in topics %}
+
+            <a href="/use_cases/{{topic.name}}">
+                <button onclick="window.location.href='/use_cases/{{topic.name}}';"><strong>{{topic.name}}</strong></button>
+            </a>
+            
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+    <!--
     <form method='POST' style="text-align: center;">
-        {{ form.crsf_token }}
-        {{ form.topic }}
-        {{ form.application }}
+        
         <input type="submit">
     <a href="/">
     <input type="button" value="Clear">
@@ -44,7 +95,7 @@
             topic = topic_select.value;
 
             fetch('/use_cases/' + topic).then(function (response) {
-                response.json().then(function (data) {
+                response.json().then(function(data) {
                     let optionHTML = '';
 
                     for (application of data.applications) {
@@ -57,7 +108,12 @@
         }
     </script>
 
-    <!--<form method="POST" action="/use_cases" style="text-align: center;">
+
+
+
+
+
+    <form method="POST" action="/use_cases" style="text-align: center;">
             <select id="topics">
                 {% for topic in topics %}
                 <option value="topic">{{topic.name}}</option>
@@ -91,12 +147,14 @@
 </body>
 
 
-
-
-
-
-
 </html>
 
 {% endblock %}
 
+
+<!--Notes
+    
+    {{name}} to specify variables in app.py
+
+
+-->
