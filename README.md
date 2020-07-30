@@ -24,9 +24,11 @@ Need a Neo4j database running:
 
 - Start the database
 
-- Clone this repository. cd into the project directory. 
+- Clone this repository. `$ cd` into the project directory. 
 
-- Create a Python virtual environment with the command 'virtualenv name-of-env'. For simplicity, name it 'venv'. 
+- Create a Python virtual environment with the command `$ virtualenv name-of-env`. For simplicity, name it 'venv'. 
+
+- Start up virtualenv using the following command `$ source venv/bin/activate`. 
 
 3. Install the required python packages
 
