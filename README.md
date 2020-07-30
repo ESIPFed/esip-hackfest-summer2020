@@ -1,4 +1,4 @@
-# ubd-prototype
+# Usage-Based Discovery Prototype - A simple web application
  
 
 General instructions for set up:
