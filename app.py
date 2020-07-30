@@ -16,26 +16,22 @@ class Form(FlaskForm):
 
 @app.route('/') #, methods=['GET', 'POST'])
 def home():
-    '''
-    form = Form()
-    form.topic.choices = [topic['name'] for topic in graph.nodes.match("Topic")]
-    # form.application.choices = [(app['name']) for app in graph.nodes.match("Application")]
-    
-    if request.method == 'POST':
-        topic = request.form['topic']
-        app = request.form['application']
-
-        # get datasets used by app
-        data = get_datasets(app)
-        datasets = [d[0] for d in data]
-            
-        #return jsonify({'datasets' : datasets})
-        return render_template('data.html', topic=topic, app=app, datasets=datasets)
-    '''
 
     topics = graph.nodes.match("Topic")
     return render_template('home.html', topics=topics)
-    # return render_template('home.html', form=form) # topics=topics 
+
+
+
+
+def get_apps(topic):
+    query = '''
+        match p=(t:Topic)-[r:`relates to`]-(a:Application) 
+        WHERE t.name = $topic
+        RETURN a.name, a.website, a.publication
+        '''
+    
+    return graph.run(query, topic=topic)
+
 
 
 @app.route('/use_cases/<topic>')
@@ -47,6 +43,18 @@ def use_cases(topic):
     # return jsonify({'applications' : applications})
     return render_template('use_cases.html', topic=topic, applications=applications)
      
+
+
+
+def get_datasets(app):
+    query = '''
+        match p=(a:Application)-[r:`uses`]-(d:Dataset) 
+        WHERE a.name = $app
+        RETURN d.identifier, r.conf_level
+        '''
+
+    return graph.run(query, app=app)
+
 
 @app.route('/data/<topic>/<application>')
 def data(topic, application):
@@ -78,26 +86,6 @@ if __name__ == '__main__':
 
 
 
-
-
-def get_apps(topic):
-    query = '''
-        match p=(t:Topic)-[r:`relates to`]-(a:Application) 
-        WHERE t.name = $topic
-        RETURN a.name, a.website, a.publication
-        '''
-    
-    return graph.run(query, topic=topic)
-
-
-def get_datasets(app):
-    query = '''
-        match p=(a:Application)-[r:`uses`]-(d:Dataset) 
-        WHERE a.name = $app
-        RETURN d.identifier, r.conf_level
-        '''
-
-    return graph.run(query, app=app)
 
 
 
