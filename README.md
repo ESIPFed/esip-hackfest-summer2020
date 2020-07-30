@@ -37,14 +37,13 @@ Need a Neo4j database running:
 
 
 Any questions or suggestions for improvement?
-Questions - email maggieqzhu@yahoo.com 
-Suggestions - submit a pull request
+- Questions - email maggieqzhu@yahoo.com 
+- Suggestions - submit a pull request
 
 
 
 
 Ways to contribute to this project: 
-
 - Redesign this application to be compatible with a remote Neo4j database (with pass
 - Automate the relationship foraging process (will likely involve web scraping and/or ML)
 
