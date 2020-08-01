@@ -28,7 +28,7 @@ Need a Neo4j database running:
 
 - Create a Python virtual environment with the command `$ virtualenv name-of-env`. For simplicity, name it 'venv'. 
 
-- Start up virtualenv using the following command `$ source venv/bin/activate`. 
+- Start up the virtual environment using the following command `$ source venv/bin/activate`. 
 
 3. Install the required python packages
 
