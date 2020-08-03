@@ -36,7 +36,7 @@ Need a Neo4j database running:
 
 4. Enter the following commands with your username (should be neo4j by default) and password to set the necessary environment variables: 
 
-`$ export NEO4J_USERNAME=your_username`
+`$ export NEO4J_USERNAME=your_username` <br />
 `$ export NEO4J_PASSWORD=your_password`
 
 5. Run the application
