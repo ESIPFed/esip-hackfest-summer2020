@@ -1,6 +1,6 @@
 from py2neo import Graph, Node, Relationship
 import csv
-
+import os
 
 def db():
 
@@ -8,7 +8,9 @@ def db():
         csv_reader = csv.DictReader(csv_file) # add , delimiter=',' to specify delimiter
 
         # next(csv_reader)  # skips over both header rows 
-        graph = Graph("bolt://localhost:7687", auth=("neo4j", "ubdprototype"))
+        username = os.environ.get('NEO4J_USERNAME')
+        password = os.environ.get('NEO4J_PASSWORD')
+        graph = Graph("bolt://localhost:7687", auth=(username, password))
 
         try:
             graph.run("Match () Return 1 Limit 1")

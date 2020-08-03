@@ -20,7 +20,7 @@ Need a Neo4j database running:
 
 - Select "Set up a local database" and enter a name for your database
 
-- Set password as 'ubdprototype'
+- Set your own unique password. 
 
 - Start the database
 
@@ -34,11 +34,16 @@ Need a Neo4j database running:
 
 `$ pip install -r requirements.txt`
 
-4. Run the application
+4. Enter the following commands with your username (should be neo4j by default) and password to set the necessary environment variables: 
+
+`$ export NEO4J_USERNAME=your_username`
+`$ export NEO4J_PASSWORD=your_password`
+
+5. Run the application
 
 `$ python app.py`
 
-5. Browse to http://localhost:5000
+6. Browse to http://localhost:5000
 
 
 Any questions or suggestions for improvement?
@@ -49,7 +54,6 @@ Any questions or suggestions for improvement?
 
 
 Ways to contribute to this project: 
-- Redesign this application to be compatible with a remote Neo4j database (with pass
 - Automate the relationship foraging process (will likely involve web scraping and/or ML)
 
 
